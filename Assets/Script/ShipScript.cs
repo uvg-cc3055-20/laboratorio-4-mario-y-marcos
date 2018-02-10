@@ -17,4 +17,5 @@ public class ShipScript : MonoBehaviour {
         float movX = Input.acceleration.x;
         rigidbody.transform.Translate(Vector2.right * speed * movX * Time.deltaTime);
 	}
+
 }
