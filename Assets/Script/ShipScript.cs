@@ -6,7 +6,7 @@ public class ShipScript : MonoBehaviour {
     /*Atributos de los movimientos de la nave*/
     Rigidbody2D rigidbody;
     private float speed = 10f;
-
+    public static bool gameover = false;
     /*Use this for initialization*/
     void Start () {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -15,13 +15,17 @@ public class ShipScript : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("floor"))
         {
-            jumping = false;
-        }
+           gameover = true;
+                }
     }
     /* Update is called once per frame*/
     void Update () {
-        float movX = Input.acceleration.x;
-        rigidbody.transform.Translate(Vector2.right * speed * movX * Time.deltaTime);
+        if(gameover == false)
+        {
+            float movX = Input.acceleration.x;
+            rigidbody.transform.Translate(Vector2.right * speed * movX * Time.deltaTime);
+        }
+        
 	}
 
 }

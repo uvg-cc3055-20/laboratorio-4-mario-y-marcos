@@ -13,7 +13,7 @@ public class Meteoro : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (GameController.instance.gameover == false)
+        if(ShipScript.gameover == false)
         {
             transform.Translate(Vector3.down * scrollingSpeed * Time.deltaTime);
             if (transform.position.x < -10)

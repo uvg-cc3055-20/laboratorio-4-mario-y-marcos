@@ -16,9 +16,14 @@ public class GameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(elapsed < spawn)
+
+        if(ShipScript.gameover == false)
         {
-            elapsed += Time.deltaTime;
+            if (elapsed < spawn)
+            {
+                elapsed += Time.deltaTime;
+            }
         }
+        
 	}
 }
