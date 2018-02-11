@@ -11,7 +11,13 @@ public class ShipScript : MonoBehaviour {
     void Start () {
         rigidbody = GetComponent<Rigidbody2D>();
 	}
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("floor"))
+        {
+            jumping = false;
+        }
+    }
     /* Update is called once per frame*/
     void Update () {
         float movX = Input.acceleration.x;
