@@ -7,6 +7,7 @@ public class ShipScript : MonoBehaviour {
     Rigidbody2D rigidbody;
     private float speed = 10f;
     public static bool gameover = false;
+
     /*Use this for initialization*/
     void Start () {
         rigidbody = GetComponent<Rigidbody2D>();
